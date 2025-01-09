@@ -1,0 +1,5 @@
+export  const api_Constant = {
+  REACT_APP_NEWS_API_KEY: "953a14f56ac64f2aad32ba78ec1459eb",
+  REACT_APP_NEW_YORK_TIMES: "eeeKK6oElUyj0QQFh3NyIG9DeuI0ZFTL",
+  REACT_APP_GAURDIAN_NEWS: "4ad12fbd-d600-4eef-8c7d-d8182e774bae",
+};
