@@ -62,6 +62,12 @@ const SearchComponent = () => {
             id="search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleSearch(); // Execute the search function on Enter key
+              } else if (e.key === "Escape") {
+                setSearchTerm(""); // Clear the search term on Escape key
+              }}}
             placeholder="Type to search..."
             required
             className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -72,6 +78,7 @@ const SearchComponent = () => {
         <div className="w-full sm:w-auto">
           <button
             onClick={handleSearch}
+            
             className="w-full sm:w-auto p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none flex items-center justify-center"
           >
             <FaSearch size={16} />
