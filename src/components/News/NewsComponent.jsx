@@ -45,9 +45,9 @@ const NewsComponent = () => {
     try {
       const dateParam = defaultDate.replace(/-/g, "");
       const urls = {
-        newsApi: `https://newsapi.org/v2/everything?q=${defaultGeneral}&from=${defaultDate}&apiKey=${api_Constant.REACT_APP_NEWS_API_KEY}`,
-        nytApi: `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${defaultGeneral}&begin_date=${dateParam}&api-key=${api_Constant.REACT_APP_NEW_YORK_TIMES}`,
-        guardianApi: `https://content.guardianapis.com/search?page=2&q=${defaultGeneral}&from-date=${defaultDate}&api-key=${api_Constant.REACT_APP_GAURDIAN_NEWS}`,
+        newsApi: `https://newsapi.org/v2/everything?q=${defaultGeneral}&from=${defaultDate}&to=${defaultDate}&apiKey=${api_Constant.REACT_APP_NEWS_API_KEY}`,
+        nytApi: `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${defaultGeneral}&begin_date=${dateParam}&end_date=${defaultDate}&api-key=${api_Constant.REACT_APP_NEW_YORK_TIMES}`,
+        guardianApi: `https://content.guardianapis.com/search?page=2&q=${defaultGeneral}&from-date=${defaultDate}&to-date=${defaultDate}&api-key=${api_Constant.REACT_APP_GAURDIAN_NEWS}`,
       };
 
       const [newsApiResponse, nytApiResponse, guardianApiResponse] =
