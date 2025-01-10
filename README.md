@@ -1,4 +1,3 @@
-
 # Frontend Application for News Aggregator(NewsNexus)
 
 ### Overview
