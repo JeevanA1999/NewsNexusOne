@@ -77,8 +77,8 @@ const NewsComponent = () => {
 
   const renderArticles = useCallback(
     (articles, source) => {
-      if (!articles.length) return <div>No articles found</div>;
-
+      // if (!articles.length) return <div>No articles found</div>;
+      if (!articles.length) return null
       return articles.map((article, index) => {
         let image, title, description, url;
 
