@@ -29,9 +29,15 @@ export default function PersonalizedModal({
     "Emily Davis",
     "Vittoria Elliott",
     "Mary Kekatos",
-    "Al Jazeera"
+    "Al Jazeera",
   ];
-  const sources = ["Wired", "The Verge", "ABC News", "The Guardian", "The New York Times"];
+  const sources = [
+    "Wired",
+    "The Verge",
+    "ABC News",
+    "The Guardian",
+    "The New York Times",
+  ];
 
   // Handle checkbox change for categories
   const handleCategoryChange = (e) => {
@@ -81,65 +87,76 @@ export default function PersonalizedModal({
       {personalizedModal && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white rounded-lg shadow-lg  p-4 flex flex-col space-y-4">
-            <h2 className="text-lg font-semibold text-center">Personalized News</h2>
- <div className=" flex md:flex-row  flex-col space-y-4 md:gap-2">
-            {/* News Categories Section */}
-            <div className="flex flex-col space-y-2 ">
-              <h3 className="font-semibold">Categories</h3>
-              {categories.map((category) => (
-                <div key={category} className="flex  items-center">
-                  <input
-                    type="checkbox"
-                    value={category}
-                    onChange={handleCategoryChange}
-                    checked={selectedCategories.includes(category)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                  />
-                  <label className="ml-2 text-gray-700">{category}</label>
-                </div>
-              ))}
-            </div>
+            <h2 className="text-lg font-semibold text-center">
+              Personalized News
+            </h2>
+            <div className=" flex md:flex-row  flex-col  md:gap-2">
+              {/* News Categories Section */}
+              <div className="flex flex-col space-y-2 ">
+                <h3 className="font-semibold">Categories</h3>
+                {categories.map((category) => (
+                  <label
+                    key={category}
+                    className="flex items-center cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      value={category}
+                      onChange={handleCategoryChange}
+                      checked={selectedCategories.includes(category)}
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span className="ml-2 text-gray-700">{category}</span>
+                  </label>
+                ))}
+              </div>
 
-            {/* Authors Section */}
-            <div className="flex flex-col space-y-2">
+              {/* Authors Section */}
+              <div className="flex flex-col space-y-2">
               <h3 className="font-semibold">Authors</h3>
-              {authors.map((author) => (
-                <div key={author} className="flex items-center">
-                  <input
-                    type="checkbox"
-                    value={author}
-                    onChange={handleAuthorChange}
-                    checked={selectedAuthors.includes(author)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                  />
-                  <label className="ml-2 text-gray-700">{author}</label>
-                </div>
-              ))}
-            </div>
+                {authors.map((author) => (
+                  <label
+                    key={author}
+                    className="flex items-center cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      value={author}
+                      onChange={handleAuthorChange}
+                      checked={selectedAuthors.includes(author)}
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span className="ml-2 text-gray-700">{author}</span>
+                  </label>
+                ))}
+              </div>
 
-            {/* News Sources Section */}
-            <div className="flex flex-col space-y-2">
-              <h3 className="font-semibold">Sources</h3>
-              {sources.map((source) => (
-                <div key={source} className="flex items-center">
-                  <input
-                    type="checkbox"
-                    value={source}
-                    onChange={handleSourceChange}
-                    checked={selectedSources.includes(source)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                  />
-                  <label className="ml-2 text-gray-700">{source}</label>
-                </div>
-              ))}
-            </div>
+              {/* News Sources Section */}
+              <div className="flex flex-col space-y-2">
+                <h3 className="font-semibold">Sources</h3>
+                {sources.map((source) => (
+                  <label
+                    key={source}
+                    className="flex items-center cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      value={source}
+                      onChange={handleSourceChange}
+                      checked={selectedSources.includes(source)}
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                    />
+                    <span className="ml-2 text-gray-700">{source}</span>
+                  </label>
+                ))}
+              </div>
             </div>
 
             {/* Action Buttons */}
             <div className="flex justify-between">
               <button
                 onClick={handleDone}
-                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+                className="px-4 py-2 bg-blue-400 text-white rounded-lg hover:bg-blue-700"
               >
                 Done
               </button>
